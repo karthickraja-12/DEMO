@@ -1,0 +1,201 @@
+import type { Product } from "@/types";
+
+export const DEMO_PRODUCTS: Product[] = [
+  {
+    id: "1",
+    name: "Silk Heritage Blazer",
+    description:
+      "A timeless blazer crafted from premium silk blend. Perfect for formal occasions and smart-casual outings. Features a structured silhouette with subtle sheen.",
+    price: 12999,
+    salePrice: undefined,
+    images: [
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+      "https://images.unsplash.com/photo-1598522325074-042db73aa4e6?w=600&q=80",
+    ],
+    category: { id: "men", name: "Men", slug: "men", imageUrl: "" },
+    categoryId: "men",
+    variants: [
+      { id: "1-s", productId: "1", size: "S", stock: 3 },
+      { id: "1-m", productId: "1", size: "M", stock: 5 },
+      { id: "1-l", productId: "1", size: "L", stock: 2 },
+      { id: "1-xl", productId: "1", size: "XL", stock: 0 },
+    ],
+    isFeatured: true,
+    isOnSale: false,
+    tags: ["blazer", "formal", "silk"],
+    createdAt: "2026-01-01",
+  },
+  {
+    id: "2",
+    name: "Noir Drape Dress",
+    description:
+      "Elegant floor-length dress in matte noir finish. Adjustable waist tie, flowing fabric that moves beautifully. A statement piece for any occasion.",
+    price: 8999,
+    salePrice: 6499,
+    images: [
+      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80",
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&q=80",
+    ],
+    category: { id: "women", name: "Women", slug: "women", imageUrl: "" },
+    categoryId: "women",
+    variants: [
+      { id: "2-xs", productId: "2", size: "XS", stock: 4 },
+      { id: "2-s", productId: "2", size: "S", stock: 6 },
+      { id: "2-m", productId: "2", size: "M", stock: 3 },
+      { id: "2-l", productId: "2", size: "L", stock: 1 },
+    ],
+    isFeatured: true,
+    isOnSale: true,
+    tags: ["dress", "elegant", "women"],
+    createdAt: "2026-01-05",
+  },
+  {
+    id: "3",
+    name: "Urban Cargo Jacket",
+    description:
+      "Heavyweight cotton cargo jacket with multiple utility pockets. Oversized fit, dropped shoulders. The ultimate streetwear layering piece.",
+    price: 7499,
+    salePrice: undefined,
+    images: [
+      "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=600&q=80",
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80",
+    ],
+    category: { id: "streetwear", name: "Streetwear", slug: "streetwear", imageUrl: "" },
+    categoryId: "streetwear",
+    variants: [
+      { id: "3-s", productId: "3", size: "S", stock: 2 },
+      { id: "3-m", productId: "3", size: "M", stock: 8 },
+      { id: "3-l", productId: "3", size: "L", stock: 5 },
+      { id: "3-xl", productId: "3", size: "XL", stock: 3 },
+    ],
+    isFeatured: true,
+    isOnSale: false,
+    tags: ["jacket", "cargo", "streetwear"],
+    createdAt: "2026-01-10",
+  },
+  {
+    id: "4",
+    name: "Cashmere Turtleneck",
+    description:
+      "100% pure cashmere ribbed turtleneck sweater. Incredibly soft, warm, and luxurious. Available in 6 curated colorways.",
+    price: 9999,
+    salePrice: 7999,
+    images: [
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80",
+      "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=600&q=80",
+    ],
+    category: { id: "women", name: "Women", slug: "women", imageUrl: "" },
+    categoryId: "women",
+    variants: [
+      { id: "4-xs", productId: "4", size: "XS", stock: 5 },
+      { id: "4-s", productId: "4", size: "S", stock: 4 },
+      { id: "4-m", productId: "4", size: "M", stock: 7 },
+      { id: "4-l", productId: "4", size: "L", stock: 0 },
+    ],
+    isFeatured: false,
+    isOnSale: true,
+    tags: ["cashmere", "sweater", "luxury"],
+    createdAt: "2026-01-12",
+  },
+  {
+    id: "5",
+    name: "Satin Slip Skirt",
+    description:
+      "Bias-cut satin midi skirt with side slit. Lustrous finish, fluid movement. Pairs perfectly with tucked-in blouses or crop tops.",
+    price: 4999,
+    salePrice: undefined,
+    images: [
+      "https://images.unsplash.com/photo-1594938298603-c8148c4b4395?w=600&q=80",
+      "https://images.unsplash.com/photo-1582533561751-bb4ffa3b5c88?w=600&q=80",
+    ],
+    category: { id: "women", name: "Women", slug: "women", imageUrl: "" },
+    categoryId: "women",
+    variants: [
+      { id: "5-xs", productId: "5", size: "XS", stock: 3 },
+      { id: "5-s", productId: "5", size: "S", stock: 5 },
+      { id: "5-m", productId: "5", size: "M", stock: 4 },
+      { id: "5-l", productId: "5", size: "L", stock: 2 },
+    ],
+    isFeatured: true,
+    isOnSale: false,
+    tags: ["skirt", "satin", "elegant"],
+    createdAt: "2026-01-14",
+  },
+  {
+    id: "6",
+    name: "Structured Overshirt",
+    description:
+      "A premium cotton overshirt with structured collar and button-through placket. Versatile piece that works as both a shirt and light jacket.",
+    price: 5499,
+    salePrice: undefined,
+    images: [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80",
+    ],
+    category: { id: "men", name: "Men", slug: "men", imageUrl: "" },
+    categoryId: "men",
+    variants: [
+      { id: "6-s", productId: "6", size: "S", stock: 6 },
+      { id: "6-m", productId: "6", size: "M", stock: 9 },
+      { id: "6-l", productId: "6", size: "L", stock: 4 },
+      { id: "6-xl", productId: "6", size: "XL", stock: 2 },
+    ],
+    isFeatured: false,
+    isOnSale: false,
+    tags: ["shirt", "overshirt", "structured"],
+    createdAt: "2026-01-16",
+  },
+  {
+    id: "7",
+    name: "Vintage Wash Jeans",
+    description:
+      "Medium wash denim with vintage distressing. Relaxed straight fit, 100% organic cotton. The most versatile piece in your wardrobe.",
+    price: 5999,
+    salePrice: 4499,
+    images: [
+      "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80",
+      "https://images.unsplash.com/photo-1475178626620-a4d074967452?w=600&q=80",
+    ],
+    category: { id: "men", name: "Men", slug: "men", imageUrl: "" },
+    categoryId: "men",
+    variants: [
+      { id: "7-s", productId: "7", size: "S", stock: 3 },
+      { id: "7-m", productId: "7", size: "M", stock: 5 },
+      { id: "7-l", productId: "7", size: "L", stock: 7 },
+      { id: "7-xl", productId: "7", size: "XL", stock: 4 },
+    ],
+    isFeatured: false,
+    isOnSale: true,
+    tags: ["denim", "jeans", "casual"],
+    createdAt: "2026-01-18",
+  },
+  {
+    id: "8",
+    name: "Leather Crossbody Bag",
+    description:
+      "Genuine Italian leather crossbody bag with gold hardware. Compact yet functional with multiple interior compartments.",
+    price: 15999,
+    salePrice: undefined,
+    images: [
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80",
+    ],
+    category: { id: "accessories", name: "Accessories", slug: "accessories", imageUrl: "" },
+    categoryId: "accessories",
+    variants: [
+      { id: "8-m", productId: "8", size: "M", stock: 10 },
+    ],
+    isFeatured: true,
+    isOnSale: false,
+    tags: ["bag", "leather", "accessories"],
+    createdAt: "2026-01-20",
+  },
+];
+
+export const CATEGORIES = [
+  { id: "all", name: "All", slug: "all" },
+  { id: "men", name: "Men", slug: "men" },
+  { id: "women", name: "Women", slug: "women" },
+  { id: "streetwear", name: "Streetwear", slug: "streetwear" },
+  { id: "accessories", name: "Accessories", slug: "accessories" },
+];

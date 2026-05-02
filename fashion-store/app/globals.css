@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #C8A96E;
+  --color-accent-light: #E0C88A;
+  --color-accent-dark: #A0854A;
+
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Playfair Display", serif;
+
+  --animate-fade-up: fadeUp 0.6s ease forwards;
+  --animate-fade-in: fadeIn 0.4s ease forwards;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.5s infinite;
+}
+
+/* ========== KEYFRAMES ========== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+/* ========== CSS VARIABLES (dark mode default) ========== */
+:root {
+  --bg-primary:   #0a0a0b;
+  --bg-secondary: #111113;
+  --bg-elevated:  #1a1a1e;
+  --surface:      #222228;
+  --border-col:   rgba(255,255,255,0.09);
+  --text-primary:   #f5f5f0;
+  --text-secondary: #9a9a90;
+  --text-muted:     #5a5a55;
+  --card-bg:        #16161a;
+  --card-border:    rgba(255,255,255,0.07);
+}
+
+/* ========== LIGHT MODE ========== */
+.light {
+  --bg-primary:   #f8f7f4;
+  --bg-secondary: #efede8;
+  --bg-elevated:  #e5e2db;
+  --surface:      #ffffff;
+  --border-col:   rgba(0,0,0,0.10);
+  --text-primary:   #1a1a1b;
+  --text-secondary: #4a4a45;
+  --text-muted:     #8a8a85;
+  --card-bg:        #ffffff;
+  --card-border:    rgba(0,0,0,0.08);
+}
+
+/* ========== RESET ========== */
+html, body, #__next {
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========== TYPOGRAPHY ========== */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+p {
+  line-height: 1.7;
+  letter-spacing: 0em;
+}
+
+/* Display / serif headings */
+.font-display {
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.01em;
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb  { background: rgba(200,169,110,0.4); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #c8a96e; }
+::selection { background: rgba(200,169,110,0.25); color: var(--text-primary); }
+
+/* ========== GLASS ========== */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-col);
+}
+.light .glass {
+  background: rgba(255,255,255,0.75);
+}
+
+/* ========== SKELETON LOADER ========== */
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-elevated) 25%, var(--surface) 50%, var(--bg-elevated) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ========== CAROUSEL ========== */
+.carousel-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+.carousel-scroll::-webkit-scrollbar { display: none; }
+
+/* ========== PILL NAV ========== */
+.pill-nav {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-col);
+  border-radius: 999px;
+  padding: 5px;
+  display: flex;
+  gap: 2px;
+}
+.pill-nav-item {
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pill-nav-item:hover, .pill-nav-item.active {
+  background: #c8a96e;
+  color: #0a0a0b;
+}
+
+/* ========== BUTTONS ========== */
+.btn-gold {
+  background: linear-gradient(135deg, #c8a96e 0%, #dfc084 50%, #b8924a 100%);
+  color: #0a0a0b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(200,169,110,0.35);
+  filter: brightness(1.05);
+}
+.btn-gold:active { transform: translateY(0); }
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border-col);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-outline:hover { border-color: rgba(200,169,110,0.6); color: #c8a96e; }
+
+/* ========== PRODUCT CARD ========== */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border);
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+.light .product-card {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.light .product-card:hover {
+  box-shadow: 0 20px 50px rgba(200,169,110,0.15);
+}
+
+/* ========== INPUT ========== */
+.input-field {
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border-col);
+  color: var(--text-primary);
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  font-family: inherit;
+  letter-spacing: -0.01em;
+}
+.input-field:focus {
+  border-color: #c8a96e;
+  box-shadow: 0 0 0 3px rgba(200,169,110,0.1);
+}
+.input-field::placeholder { color: var(--text-muted); }
+
+/* ========== BADGE ========== */
+.badge {
+  background: linear-gradient(135deg, #c8a96e, #dfc084);
+  color: #0a0a0b;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ========== GOLD GRADIENT ========== */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #c8a96e 0%, #dfc084 50%, #b8924a 100%);
+}
+
+/* ========== PING ANIMATION ========== */
+.animate-ping {
+  animation: ping 1s cubic-bezier(0,0,0.2,1) infinite;
+}
+
+/* ========== SECTION SPACING ========== */
+section {
+  width: 100%;
+}
+
+/* ========== LIGHT MODE OVERRIDES ========== */
+.light .glass {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(0,0,0,0.08);
+}
