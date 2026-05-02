@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -21,6 +21,10 @@ export default function CartPage() {
   const [promoCode, setPromoCode] = useState("");
   const [promoApplied, setPromoApplied] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Use useEffect to set mounted to true
+  useEffect(() => setMounted(true), []);
 
   const subtotal = totalPrice();
   const discount = promoApplied ? Math.round(subtotal * 0.2) : 0;
@@ -40,6 +44,10 @@ export default function CartPage() {
       setShowSuccess(false);
     }, 4000);
   };
+
+  if (!mounted) {
+    return <div className="min-h-screen" style={{ background: "var(--bg-primary)" }} />;
+  }
 
   if (showSuccess) {
     return (

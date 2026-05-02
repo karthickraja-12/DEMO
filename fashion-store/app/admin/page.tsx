@@ -54,6 +54,13 @@ export default function AdminPage() {
   const [showAddModal, setShowAddModal] = useState(false);
   const [newProduct, setNewProduct] = useState({ name: "", price: "", category: "men" });
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) {
+    return <div className="min-h-screen" style={{ background: "var(--bg-primary)" }} />;
+  }
+
   if (!user || user.role !== "ADMIN") {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: "var(--bg-primary)" }}>

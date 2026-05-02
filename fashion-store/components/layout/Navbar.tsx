@@ -126,8 +126,7 @@ export default function Navbar() {
                 )}
               </Link>
 
-              {/* Auth */}
-              {user ? (
+              {mounted && user ? (
                 <div className="hidden sm:flex items-center gap-2">
                   <Link
                     href={user.role === "ADMIN" ? "/admin" : "/account"}
